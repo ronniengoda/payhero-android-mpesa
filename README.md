@@ -1,5 +1,5 @@
 # Payhero Android MPESA
-Android MPESA library to request STK Push using MPESA Draja API.
+Android MPESA library to request STK Push using MPESA Daraja API.
 ## How to use the library
 To get a Git project into your build:
 
@@ -71,7 +71,8 @@ Add it in your root build.gradle at the end of repositories:
 	//credentials here are test credentials
         val timestamp = Utils.getTimestamp()
         val stkPush = STKPush("MPESA Android Test",amount,"174379","http://mpesa-requestbin.herokuapp.com/1ajipzt1",
-            Utils.sanitizePhoneNumber(phone_number)!!,"174379",Utils.getPassword("174379", "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919", timestamp!!)!!
+            Utils.sanitizePhoneNumber(phone_number)!!,"174379",Utils.getPassword("174379", 
+	    "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919", timestamp!!)!!
             , Utils.sanitizePhoneNumber(phone_number)!!,timestamp,"Testing","CustomerPayBillOnline")
         mApiClient!!.setGetAccessToken(false)
 
