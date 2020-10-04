@@ -48,6 +48,23 @@ Add it in your root build.gradle at the end of repositories:
    
 ## Step 4. Initiate STK Push
 ```
+ btnDeposit.setOnClickListener {
+
+                val amount = etAmount.text.toString()
+            val phone =etPhone.text.toString()
+                if (amount.isNotEmpty() && phone.isNotEmpty()) {
+                        btnDeposit.text = getString(R.string.processing)
+
+                    performSTKPush(phone, amount)
+
+                } else {
+                    etPhone.error = getString(R.string.errorm)
+                    etAmount.error = getString(R.string.errorm)
+                }
+            }
+
+
+
   private fun performSTKPush(amount: String, phone_number: String) {
         //Handle progresss here
 	
