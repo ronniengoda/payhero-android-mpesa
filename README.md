@@ -36,7 +36,7 @@ Add it in your root build.gradle at the end of repositories:
     private var mApiClient: DarajaApiClient? = null //Intitialization before on create
     //oncreate
     
-    mApiClient = DarajaApiClient("xxxxxconsumerkeyxxxx", "xxxxconumersecretxxxx")
+    mApiClient = DarajaApiClient("xxxxxconsumerkeyxxxx", "xxxxconsumersecretxxxx")
     //get this from https://developer.safaricom.co.ke/user/me/apps
         mApiClient!!.setIsDebug(true) //Set True to enable logging, false to disable.
         getAccessToken()
