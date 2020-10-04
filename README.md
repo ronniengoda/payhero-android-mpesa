@@ -20,3 +20,70 @@ Add it in your root build.gradle at the end of repositories:
 	        implementation 'com.github.bensalcie:payhero-android-mpesa:Tag'
 	}
 ```
+
+## Step 3. Add this in onCreate() method.
+```
+    private var mApiClient: DarajaApiClient? = null //Intitialization before on create
+  
+    
+    //oncreate
+    
+    mApiClient = DarajaApiClient("xxxxxconsumerkeyxxxx", "xxxxconumersecretxxxx")//get this from https://developer.safaricom.co.ke/user/me/apps
+        mApiClient!!.setIsDebug(true) //Set True to enable logging, false to disable.
+        getAccessToken()//make request availabe and ready for processing.
+	
+	
+	
+	//Access token Method being called.
+	
+   private fun getAccessToken() {
+        mApiClient!!.setGetAccessToken(true)
+        mApiClient!!.mpesaService()!!.getAccessToken().enqueue(object : Callback<AccessToken> {
+            override fun onResponse(call: Call<AccessToken?>, response: Response<AccessToken>) {
+                if (response.isSuccessful) {
+                    mApiClient!!.setAuthToken(response.body()?.accessToken)
+                }
+            }
+
+            override fun onFailure(call: Call<AccessToken?>, t: Throwable) {}
+        })
+    }
+    ```
+    
+    
+## Step 4. Initiate STK Push
+
+```private fun performSTKPush(amount: String, phone_number: String) {
+        //Handle progresss here
+	
+	//credentials here are test credentials
+        val timestamp = Utils.getTimestamp()
+        val stkPush = STKPush("MPESA Android Test",amount,"174379","http://mpesa-requestbin.herokuapp.com/1ajipzt1",
+            Utils.sanitizePhoneNumber(phone_number)!!,"174379",Utils.getPassword("174379", "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919", timestamp!!)!!
+            , Utils.sanitizePhoneNumber(phone_number)!!,timestamp,"Testing","CustomerPayBillOnline")
+        mApiClient!!.setGetAccessToken(false)
+
+        mApiClient!!.mpesaService()!!.sendPush(stkPush).enqueue(object : Callback<STKPush> {
+            override fun onResponse(call: Call<STKPush?>, response: Response<STKPush>) {
+	    //dismiss progress when running
+                try {
+                    if (response.isSuccessful) {
+                        Log.d("MPESA", "onResponse:${response.body()} ")
+			
+			//Handle when request is sucessful
+			//Get response from variable 'response'
+                    } else {
+                        Log.d("MPESA", "onResponse: ${response.errorBody()}")
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+
+            override fun onFailure(call: Call<STKPush>, t: Throwable) {
+                mProgressDialog!!.dismiss()
+                Log.d("MPESA", "onFailure: $t")
+            }
+        })
+    }
+```
