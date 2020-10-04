@@ -3,11 +3,10 @@
 Android MPESA library to request STK Push using MPESA Daraja API.
 
 # Screenshots
-  <p style="gravity:center"float="center">
+  <p float="center">
 	  <img src="https://github.com/bensalcie/payhero-android-mpesa/blob/main/screen.jpg" width="150" />
 	  <img src="https://github.com/bensalcie/payhero-android-mpesa/blob/main/screenthree.jpg" width="150" />
 	  <img src="https://github.com/bensalcie/payhero-android-mpesa/blob/main/screentwo.jpg" width="150" /> 
-
   </p>
   
   
