@@ -24,33 +24,28 @@ Add it in your root build.gradle at the end of repositories:
 ## Step 3. Add this in onCreate() method.
 ```
     private var mApiClient: DarajaApiClient? = null //Intitialization before on create
-  
-    
     //oncreate
     
-    mApiClient = DarajaApiClient("xxxxxconsumerkeyxxxx", "xxxxconumersecretxxxx")//get this from https://developer.safaricom.co.ke/user/me/apps
+    mApiClient = DarajaApiClient("xxxxxconsumerkeyxxxx", "xxxxconumersecretxxxx")
+    //get this from https://developer.safaricom.co.ke/user/me/apps
         mApiClient!!.setIsDebug(true) //Set True to enable logging, false to disable.
-        getAccessToken()//make request availabe and ready for processing.
-	
-	
+        getAccessToken()
+	//make request availabe and ready for processing.
 	
 	//Access token Method being called.
-	
-   private fun getAccessToken() {
-        mApiClient!!.setGetAccessToken(true)
-        mApiClient!!.mpesaService()!!.getAccessToken().enqueue(object : Callback<AccessToken> {
-            override fun onResponse(call: Call<AccessToken?>, response: Response<AccessToken>) {
-                if (response.isSuccessful) {
-                    mApiClient!!.setAuthToken(response.body()?.accessToken)
-                }
-            }
-
-            override fun onFailure(call: Call<AccessToken?>, t: Throwable) {}
-        })
-    }
-    ```
-    
-    
+	   private fun getAccessToken() {
+		mApiClient!!.setGetAccessToken(true)
+		mApiClient!!.mpesaService()!!.getAccessToken().enqueue(object : Callback<AccessToken> {
+		    override fun onResponse(call: Call<AccessToken?>, response: Response<AccessToken>) {
+			if (response.isSuccessful) {
+			    mApiClient!!.setAuthToken(response.body()?.accessToken)
+			}
+		    }
+		    override fun onFailure(call: Call<AccessToken?>, t: Throwable) {}
+		})
+	    }
+  ```
+   
 ## Step 4. Initiate STK Push
 
 ```private fun performSTKPush(amount: String, phone_number: String) {
