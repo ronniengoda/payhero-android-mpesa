@@ -1,4 +1,5 @@
-# Payhero Android MPESA
+# Payhero Android MPESA [![](https://jitpack.io/v/bensalcie/payhero-android-mpesa.svg)](https://jitpack.io/#bensalcie/payhero-android-mpesa)
+
 Android MPESA library to request STK Push using MPESA Daraja API.
 ## How to use the library
 To get a Git project into your build:
