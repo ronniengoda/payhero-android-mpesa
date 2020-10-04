@@ -47,8 +47,8 @@ Add it in your root build.gradle at the end of repositories:
   ```
    
 ## Step 4. Initiate STK Push
-
-```private fun performSTKPush(amount: String, phone_number: String) {
+```
+  private fun performSTKPush(amount: String, phone_number: String) {
         //Handle progresss here
 	
 	//credentials here are test credentials
