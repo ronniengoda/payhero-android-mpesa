@@ -8,8 +8,10 @@ Android MPESA library to request STK Push using MPESA Daraja API.
 	  <img src="https://github.com/bensalcie/Tiny-Track/blob/master/Screenshots/Screenshot_20191129-233852.png" width="150" /> 
 	  <img src="https://github.com/bensalcie/Tiny-Track/blob/master/Screenshots/Screenshot_20191130-002115.png" width="150" />
   </p>
-## How to use the library
-To get a Git project into your build:
+  
+  
+##  How to use the library
+ To get a Git project into your build:
 
 ## Step 1. Add the JitPack repository to your build file
 
