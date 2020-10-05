@@ -85,7 +85,8 @@ Add it in your root build.gradle at the end of repositories:
                     if (response.isSuccessful) {
                         Log.d("MPESA", "onResponse:${response.body()} ")
 			//Handle when request is sucessful
-			//Get response from variable 'response' and manipulate as you want using response.body()
+			//Get response from variable 'response' 
+			//and manipulate as you want using response.body()
                     } else {
                         Log.d("MPESA", "onResponse: ${response.errorBody()}")
                     }
