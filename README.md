@@ -1,12 +1,6 @@
 # Payhero Android MPESA Library [![](https://jitpack.io/v/bensalcie/payhero-android-mpesa.svg)](https://jitpack.io/#bensalcie/payhero-android-mpesa)
 
 Android MPESA library to request STK Push using MPESA Daraja API.
-<a href="https://www.buymeacoffee.com/bensalcie" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
-
-[button url="https://www.buymeacoffee.com/bensalcie"]
-
-
 # Screenshots
   <p float="center">
 	  <img src="https://github.com/bensalcie/payhero-android-mpesa/blob/main/screen.jpg" width="200" />
@@ -106,3 +100,5 @@ Add it in your root build.gradle at the end of repositories:
         })
     }
 ```
+
+<a href="https://www.buymeacoffee.com/bensalcie" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
