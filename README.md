@@ -4,8 +4,8 @@ Android MPESA library to request STK Push using MPESA Daraja API.
 
 # Screenshots
   <p float="center">
-	  <img src="https://github.com/bensalcie/payhero-android-mpesa/blob/main/screen.jpg" width="150" />
-	  <img src="https://github.com/bensalcie/payhero-android-mpesa/blob/main/screentwo.jpg" width="150" /> 
+	  <img src="https://github.com/bensalcie/payhero-android-mpesa/blob/main/screen.jpg" width="180" />
+	  <img src="https://github.com/bensalcie/payhero-android-mpesa/blob/main/screentwo.jpg" width="180" /> 
   </p>
 
   
@@ -27,7 +27,9 @@ Add it in your root build.gradle at the end of repositories:
 ## Step 2. Add the dependency
 ```
 	dependencies {
+	         implementation 'com.squareup.retrofit2:retrofit:2.5.0'
 	        implementation 'com.github.bensalcie:payhero-android-mpesa:0.1.3'
+		
 	}
 ```
 
@@ -39,9 +41,10 @@ Add it in your root build.gradle at the end of repositories:
     mApiClient = DarajaApiClient("xxxxxconsumerkeyxxxx", "xxxxconsumersecretxxxx")
     //get this from https://developer.safaricom.co.ke/user/me/apps
         mApiClient!!.setIsDebug(true) //Set True to enable logging, false to disable.
-        getAccessToken()
-	//make request availabe and ready for processing.
-	
+        getAccessToken()//make request availabe and ready for processing.
+```
+## Step 3.Define access token method.
+```
 	//Access token Method being called.
 	   private fun getAccessToken() {
 		mApiClient!!.setGetAccessToken(true)
